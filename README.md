@@ -7,6 +7,10 @@
 - **Linguagem foco:** <br>
 ✔ Javascript 
 
-## Objetivo
+## Descrição
 
-Colocar à prova o conhecimento de manipulação do DOM, Arrays, Funções e Estruturas de Repetição.
+Já havia visto essa ideia de projeto há um bom tempo, mas não tinha decidido colocar a mão na massa...até há pouco.
+
+Depois de terminar minhas revisões de HTML e CSS, vi essa janela de oportunidade para fazer um apanhado do que aprendi até agora, seja nessas tecnologias, seja em JavaScript.
+
+Basicamente, o projeto utiliza de manipulação do DOM, execução de funções através de eventos, Estrutura de Repetição (principalmente FOR) e Estruturas Condicionais, além de HTML e CSS.
