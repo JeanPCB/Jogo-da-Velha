@@ -1,7 +1,6 @@
 const markPlaces = document.querySelectorAll( '.markPlace' );
-let counter = 0;
-let playerX = [];
-let playerO = [];
+const divGameOver = document.querySelector( '#gameOver' );
+
 const possibleEnds = [
     [ '1', '2', '3' ],
     [ '1', '4', '7' ],
@@ -13,14 +12,16 @@ const possibleEnds = [
     [ '7', '8', '9' ]
 ];
 
+let counter = 0;
+let playerX = [];
+let playerO = [];
+
+
 for( let markPlace of markPlaces) {
     markPlace.addEventListener( 'click', setPlays );
-    markPlace.addEventListener( 'click', () => {
-        if( playerTurn().length >= 3) {
-            console.log( gameOver( playerTurn() ) );
-        }
-    });
     markPlace.addEventListener( 'click', setActionsDisplay );
+    markPlace.addEventListener( 'click', isGameOver );
+    markPlace.addEventListener( 'click', gameOverScreen );
 }
 
 function setActionsDisplay( e ) {
@@ -39,11 +40,11 @@ function setPlays( e ) {
     counter == 0 ? playerX.push( e.target.id ) : playerO.push( e.target.id );
 }
 
-function playerTurn() {
+function lastPlay() {
     if( counter == 0 )
-        return playerX;
-    else
         return playerO;
+    else
+        return playerX;
 }
 
 function gameOver( plays ) {
@@ -60,5 +61,17 @@ function endGameCheck( plays, index ) {
         return possibleEnds[index].every( value => {
             return plays.includes( value );
         } );
+    }
+}
+
+function isGameOver() {
+    if( lastPlay().length >= 3) {
+       return gameOver( lastPlay() );
+    }
+}
+
+function gameOverScreen() {
+    if( isGameOver() == true ) {
+        divGameOver.style.transform = 'translateY(0)';
     }
 }

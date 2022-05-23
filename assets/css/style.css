@@ -83,6 +83,8 @@ a {
     justify-content: center;
     align-items: center;
     text-align: center;
+    transform: translateY(-100%);
+    transition: 1s;
 }
 
 #gameOver .container {
@@ -111,9 +113,13 @@ a {
     z-index: 1;
 }
 
+.fa-solid.fa-arrow-rotate-left {
+    position: relative;
+    top: 5px;
+}
+
 .playAgainBtn {
     padding: var(--small-gap) var(--gap);
-    border-radius: 2rem;
     background-image: linear-gradient(to top right, #1fa653, #116732);
     position: relative;
     right: 100%;
@@ -123,6 +129,8 @@ a {
 .hidden-span-after {
     visibility: hidden;
 }
+
+/* BOARD PART */
 
 #stage {
     display: grid;
@@ -146,3 +154,5 @@ a {
     width: calc( 5rem + 5vw);
     height: calc( 5rem + 5vw);
 }
+
+/*-----------*/
