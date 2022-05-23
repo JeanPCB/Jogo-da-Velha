@@ -17,7 +17,7 @@ for( let markPlace of markPlaces) {
     markPlace.addEventListener( 'click', setPlays );
     markPlace.addEventListener( 'click', () => {
         if( playerTurn().length >= 3) {
-            console.log( checkEnds( playerTurn() ) );
+            console.log( gameOver( playerTurn() ) );
         }
     });
     markPlace.addEventListener( 'click', setActionsDisplay );
@@ -46,7 +46,7 @@ function playerTurn() {
         return playerO;
 }
 
-function checkEnds( plays ) {
+function gameOver( plays ) {
     for( let index in possibleEnds ){
       var checkValue = endGameCheck( plays, index );
       if( checkValue )
