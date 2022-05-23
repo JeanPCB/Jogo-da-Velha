@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
+
+/* font-family: 'Grape Nuts', cursive; */
+
+:root {
+    /* Colors */
+    --primary-clr: #000;
+    --secondary-clr: #fff;
+
+    /* Spaces */
+    --biggest-gap: calc(5rem + 5vw);
+    --large-gap: calc(2rem + 5vw);
+    --medium-gap: calc(1rem + 3vw);
+    --small-gap: calc(1rem + 1vw);
+    --smallest-gap: calc(0.5rem + 0.5vw);
+    --gap: calc(1rem + 2vw);
+    
+    /* Times */
+    ---main-trans-time: 0.3s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Grape Nuts', cursive;
+    background-color: var(--primary-clr);
+    color: var(--secondary-clr);
+}
+
+h1 {
+    font-size: clamp(2.4rem, 2rem + 2.2vw, 6rem);
+    text-align: center;
+}
+
+#main-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: var(--gap);
+    max-width: 100%;
+    height: 100vh;
+    background-color: var(--primary-clr);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    gap: var(--large-gap);
+    padding-bottom: 10rem;
+}
+
+#stage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--smallest-gap);
+    background-color: var(--secondary-clr);
+}
+
+.markPlace {
+    background-color: var(--primary-clr);
+    width: calc( 5rem + 5vw);
+    height: calc( 5rem + 5vw);
+}
+
+.markPlace:hover {
+    cursor: pointer;
+}
+
+.markPlaceDisabled {
+    background-color: var(--primary-clr);
+    width: calc( 5rem + 5vw);
+    height: calc( 5rem + 5vw);
+}
