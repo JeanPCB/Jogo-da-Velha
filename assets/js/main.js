@@ -71,6 +71,8 @@ function isGameOver() {
 }
 
 function gameOverScreen() {
+    gameOverScreenHeight();
+    animsPlayAgainBtn();
     if( isGameOver() == true ) {
         divGameOver.style.transform = 'translateY(0)';
     }

@@ -77,13 +77,13 @@ a {
 #gameOver {
     position: absolute;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-image:  linear-gradient( to bottom right, rgba(97, 29, 29, 0.942), rgb(0, 0, 0) );
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    transform: translateY(-100%);
+    transform: translateY(-200%);
     transition: 1s;
 }
 
@@ -101,10 +101,12 @@ a {
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.484);
+    transition: 0.3s;
 }
 
 .playAgainDiv:hover {
     cursor: pointer;
+    background-color: #000;
 }
 
 .hidden-span-before {
