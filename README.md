@@ -2,6 +2,8 @@
 
 *Jogo da velha criado sem pesquisa prévia 😝*
 
+🔗 https://jeanpcb.github.io/Jogo-da-Velha/
+
 - **Linguagem foco:** <br>
 ✔ Javascript 
 
