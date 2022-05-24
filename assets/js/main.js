@@ -26,11 +26,11 @@ for( let markPlace of markPlaces) {
 
 function setActionsDisplay( e ) {
     if( counter == 0 ) {
-        e.target.innerHTML = '<img class="markPlaceDisabled" src="./assets/images/cross-sign-element-red-x-260nw-567030823.webp">';
+        e.target.innerHTML = '<img class="markPlaceDisabled" src="./assets/images/crossPlayer.png">';
         e.target.style = 'pointer-events: none';
         counter = 1;
     } else {
-        e.target.innerHTML = '<img class="markPlaceDisabled" src="./assets/images/download.png">';
+        e.target.innerHTML = '<img class="markPlaceDisabled" src="./assets/images/circlePlayer.png">';
         e.target.style = 'pointer-events: none';
         counter = 0;
     }
@@ -61,6 +61,8 @@ function endGameCheck( plays, index ) {
         return possibleEnds[index].every( value => {
             return plays.includes( value );
         } );
+    } else if( plays.length == 5) {
+        return false;
     }
 }
 
@@ -72,8 +74,14 @@ function isGameOver() {
 
 function gameOverScreen() {
     gameOverScreenHeight();
-    animsPlayAgainBtn();
+    gameRestart();
     if( isGameOver() == true ) {
         divGameOver.style.transform = 'translateY(0)';
+    }
+}
+
+function clearBoard() {
+    for( let markPlace of markPlaces ) {
+        markPlace.innerHTML = '';
     }
 }
