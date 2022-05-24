@@ -1,5 +1,7 @@
 # Jogo-da-Velha
 
+(🧱 EM CONSTRUÇÃO 🧱)
+
 *Jogo da velha criado sem pesquisa prévia 😝*
 
 🔗 https://jeanpcb.github.io/Jogo-da-Velha/
