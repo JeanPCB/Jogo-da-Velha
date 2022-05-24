@@ -62,7 +62,7 @@ function endGameCheck( plays, index ) {
             return plays.includes( value );
         } );
     } else if( plays.length == 5) {
-        return false;
+        return true;
     }
 }
 
