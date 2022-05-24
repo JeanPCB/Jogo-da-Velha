@@ -65,7 +65,9 @@ function endGameCheck( plays, index ) {
 }
 
 function isGameOver() {
-    if( lastPlay().length >= 3) {
+    if( lastPlay().length == 5 ) {
+        return true;
+    }else if( lastPlay().length >= 3) {
        return gameOver( lastPlay() );
     }
 }
@@ -73,7 +75,7 @@ function isGameOver() {
 function gameOverScreen() {
     gameOverScreenHeight();
     gameRestart();
-    if( isGameOver() == true || lastPlay().length == 5 ) {
+    if( isGameOver() == true ) {
         divGameOver.style.transform = 'translateY(0)';
     }
 }
