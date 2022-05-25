@@ -30,6 +30,7 @@ function mainEventsController() {
 function isForcedEndGame() {
     endGameForced.addEventListener('click', () => {
         isForcedEnd = true;
+        counter = 3;
         gameOverScreen();
         isForcedEnd = false;
     });
@@ -77,6 +78,7 @@ function endGameCheck(plays, index) {
 
 function isGameOver() {
     if (lastPlay().length == 5) {
+        counter = 2;
         return true;
     } else if (lastPlay().length >= 3) {
         return gameOver(lastPlay());

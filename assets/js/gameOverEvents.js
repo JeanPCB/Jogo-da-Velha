@@ -1,8 +1,29 @@
 const playAgainDiv = document.querySelector('.playAgainDiv');
 const playAgainBtn = document.querySelector('.playAgainBtn');
 const body = document.querySelector('body');
+const gameOverCause = document.querySelector('#gameOverCause');
 
 function gameOverScreen() {
+    switch (counter) {
+        case 0:
+            gameOverCause.innerText = '"O" ganhou"';
+            break;
+
+        case 1:
+            gameOverCause.innerText = '"X" ganhou';
+            break;
+
+        case 2:
+            gameOverCause.innerText = 'Deu velha...';
+            break;
+
+        case 3:
+            gameOverCause.innerText = 'Jogo Finalizado';
+            break;
+        
+        default:
+            gameOverCause.innerText = 'Ocorreu algum erro';
+    }
     gameOverScreenHeight();
     gameRestart();
     if (isGameOver() == true || isForcedEnd == true) {
@@ -19,8 +40,8 @@ function gameRestart() {
         playAgainDiv.addEventListener('mouseout', () => {
             playAgainDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
         });
-        setTimeout(() => divGameOver.style.transform = 'translateY(-200%)', 1000);
         clearPlays();
+        setTimeout(() => divGameOver.style.transform = 'translateY(-200%)', 1000);
         setTimeout(clearBoard, 1000);
         setTimeout(resetActionsDisplay, 1000);
         setTimeout(resetRestartBtnAnim, 2000);
@@ -50,4 +71,5 @@ function resetActionsDisplay() {
 function clearPlays() {
     playerX = [];
     playerO = [];
+    counter = 0;
 }
