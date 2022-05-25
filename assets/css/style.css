@@ -14,7 +14,7 @@
     --small-gap: calc(1rem + 1vw);
     --smallest-gap: calc(0.5rem + 0.5vw);
     --gap: calc(1rem + 2vw);
-    
+
     /* Times */
     ---main-trans-time: 0.3s;
 }
@@ -55,9 +55,9 @@ a {
 .container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     max-width: 1200px;
     gap: var(--large-gap);
-    padding-bottom: 10rem;
 }
 
 /*------------------*/
@@ -78,13 +78,14 @@ a {
     position: absolute;
     width: 100%;
     min-height: 100vh;
-    background-image:  linear-gradient( to bottom right, rgba(97, 29, 29, 0.942), rgb(0, 0, 0) );
+    background-image: linear-gradient(to bottom right, rgba(97, 29, 29, 0.942), rgb(0, 0, 0));
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     transform: translateY(-200%);
     transition: 1s;
+    z-index: 3;
 }
 
 #gameOver .container {
@@ -143,8 +144,8 @@ a {
 
 .markPlace {
     background-color: var(--primary-clr);
-    width: calc( 5rem + 5vw);
-    height: calc( 5rem + 5vw);
+    width: calc(5rem + 5vw);
+    height: calc(5rem + 5vw);
 }
 
 .markPlace:hover {
@@ -153,8 +154,29 @@ a {
 
 .markPlaceDisabled {
     background-color: var(--primary-clr);
-    width: calc( 5rem + 5vw);
-    height: calc( 5rem + 5vw);
+    width: calc(5rem + 5vw);
+    height: calc(5rem + 5vw);
 }
 
 /*-----------*/
+
+#endGameForced {
+    position: relative;
+}
+
+#endGameForced::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    ;
+    width: 0;
+    height: 3px;
+    background-color: var(--secondary-clr);
+    transition: 0.3s;
+}
+
+#endGameForced:hover::after {
+    width: 100%;
+    left: 0;
+}

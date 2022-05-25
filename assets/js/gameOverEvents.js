@@ -5,7 +5,7 @@ const body = document.querySelector('body');
 function gameOverScreen() {
     gameOverScreenHeight();
     gameRestart();
-    if (isGameOver() == true) {
+    if (isGameOver() == true || isForcedEnd == true) {
         divGameOver.style.transform = 'translateY(0)';
     }
 }

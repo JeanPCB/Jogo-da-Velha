@@ -1,5 +1,6 @@
 const markPlaces = document.querySelectorAll('.markPlace');
 const divGameOver = document.querySelector('#gameOver');
+const endGameForced = document.querySelector('#endGameForced');
 
 const possibleEnds = [
     ['1', '2', '3'],
@@ -15,13 +16,23 @@ const possibleEnds = [
 let counter = 0;
 let playerX = [];
 let playerO = [];
+let isForcedEnd = false;
 
+function mainEventsController() {
+    for (let markPlace of markPlaces) {
+        markPlace.addEventListener('click', setPlays);
+        markPlace.addEventListener('click', setActionsDisplay);
+        markPlace.addEventListener('click', isGameOver);
+        markPlace.addEventListener('click', gameOverScreen);
+    }
+}
 
-for (let markPlace of markPlaces) {
-    markPlace.addEventListener('click', setPlays);
-    markPlace.addEventListener('click', setActionsDisplay);
-    markPlace.addEventListener('click', isGameOver);
-    markPlace.addEventListener('click', gameOverScreen);
+function isForcedEndGame() {
+    endGameForced.addEventListener('click', () => {
+        isForcedEnd = true;
+        gameOverScreen();
+        isForcedEnd = false;
+    });
 }
 
 function setActionsDisplay(e) {
@@ -71,3 +82,6 @@ function isGameOver() {
         return gameOver(lastPlay());
     }
 }
+
+isForcedEndGame();
+mainEventsController();
