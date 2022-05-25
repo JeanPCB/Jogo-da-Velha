@@ -13,7 +13,12 @@ function gameOverScreen() {
 function gameRestart() {
     playAgainDiv.addEventListener('click', () => {
         playAgainBtn.style.right = '0';
-        playAgainDiv.style.backgroundColor = '#000';
+        playAgainDiv.addEventListener('mouseover', () => {
+            playAgainDiv.style.backgroundColor = '#000';
+        });
+        playAgainDiv.addEventListener('mouseout', () => {
+            playAgainDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        });
         setTimeout(() => divGameOver.style.transform = 'translateY(-200%)', 1000);
         clearPlays();
         setTimeout(clearBoard, 1000);
