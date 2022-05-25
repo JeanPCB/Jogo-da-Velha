@@ -45,7 +45,7 @@ h2 {
 }
 
 a {
-    font-size: clamp(2.5rem, 2rem + 2.5vw, 6rem);
+    font-size: clamp(2.5rem, 3rem + 2.5vw, 6rem);
     text-decoration: none;
     color: inherit;
 }
@@ -90,6 +90,7 @@ a {
 
 #gameOver .container {
     gap: var(--gap);
+    padding-bottom: var(--biggest-gap);
 }
 
 .playAgainDiv {
