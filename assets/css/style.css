@@ -35,7 +35,6 @@ body {
     font-family: 'Grape Nuts', cursive;
     width: 100%;
     min-height: 100vh;
-    overflow: hidden;
 }
 
 h1, h2 {
@@ -71,6 +70,8 @@ a {
     min-height: 100vh;
     background-color: var(--primary-clr);
     color: var(--secondary-clr);
+    position: relative;
+    overflow: hidden;
 }
 
 /* MENU PART */
