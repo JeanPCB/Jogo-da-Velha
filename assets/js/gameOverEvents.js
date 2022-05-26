@@ -27,6 +27,7 @@ function gameOverScreen() {
     gameOverScreenHeight();
     gameRestart();
     if (isGameOver() == true || isForcedEnd == true) {
+        disableBoard();
         divGameOver.style.transform = 'translateY(0)';
     }
 }
@@ -44,8 +45,14 @@ function gameRestart() {
         setTimeout(() => divGameOver.style.transform = 'translateY(-200%)', 1000);
         setTimeout(clearBoard, 1000);
         setTimeout(resetActionsDisplay, 1000);
-        setTimeout(resetRestartBtnAnim, 2000);
+        setTimeout(resetRestartBtnAnim, 1500);
     });
+}
+
+function disableBoard() {
+    for (let playArea of playAreas) {
+        playArea.style = 'pointer-events: none';
+    }
 }
 
 function resetRestartBtnAnim() {
@@ -53,8 +60,8 @@ function resetRestartBtnAnim() {
 }
 
 function clearBoard() {
-    for (let markPlace of markPlaces) {
-        markPlace.innerHTML = '';
+    for (let playArea of playAreas) {
+        playArea.innerHTML = '';
     }
 }
 
@@ -63,8 +70,8 @@ function gameOverScreenHeight() {
 }
 
 function resetActionsDisplay() {
-    for (let markPlace of markPlaces) {
-        markPlace.style = 'pointer-events = default';
+    for (let playArea of playAreas) {
+        playArea.style = 'pointer-events: default';
     }
 }
 

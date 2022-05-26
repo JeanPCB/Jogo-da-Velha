@@ -143,17 +143,17 @@ a {
     background-color: var(--secondary-clr);
 }
 
-.markPlace {
+.playArea {
     background-color: var(--primary-clr);
     width: calc(5rem + 5vw);
     height: calc(5rem + 5vw);
 }
 
-.markPlace:hover {
+.playArea:hover {
     cursor: pointer;
 }
 
-.markPlaceDisabled {
+.playAreaDisabled {
     background-color: var(--primary-clr);
     width: calc(5rem + 5vw);
     height: calc(5rem + 5vw);

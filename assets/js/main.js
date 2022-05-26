@@ -1,4 +1,4 @@
-const markPlaces = document.querySelectorAll('.markPlace');
+const playAreas = document.querySelectorAll('.playArea');
 const divGameOver = document.querySelector('#gameOver');
 const endGameForced = document.querySelector('#endGameForced');
 
@@ -19,11 +19,11 @@ let playerO = [];
 let isForcedEnd = false;
 
 function mainEventsController() {
-    for (let markPlace of markPlaces) {
-        markPlace.addEventListener('click', setPlays);
-        markPlace.addEventListener('click', setActionsDisplay);
-        markPlace.addEventListener('click', isGameOver);
-        markPlace.addEventListener('click', gameOverScreen);
+    for (let playArea of playAreas) {
+        playArea.addEventListener('click', setPlays);
+        playArea.addEventListener('click', setActionsDisplay);
+        playArea.addEventListener('click', isGameOver);
+        playArea.addEventListener('click', gameOverScreen);
     }
 }
 
@@ -38,11 +38,11 @@ function isForcedEndGame() {
 
 function setActionsDisplay(e) {
     if (counter == 0) {
-        e.target.innerHTML = '<img class="markPlaceDisabled" src="./assets/images/crossPlayer.png">';
+        e.target.innerHTML = '<img class="playAreaDisabled" src="./assets/images/crossPlayer.png">';
         e.target.style = 'pointer-events: none';
         counter = 1;
     } else {
-        e.target.innerHTML = '<img class="markPlaceDisabled" src="./assets/images/circlePlayer.png">';
+        e.target.innerHTML = '<img class="playAreaDisabled" src="./assets/images/circlePlayer.png">';
         e.target.style = 'pointer-events: none';
         counter = 0;
     }
@@ -77,7 +77,7 @@ function endGameCheck(plays, index) {
 }
 
 function isGameOver() {
-    if (lastPlay().length == 5) {
+    if (lastPlay().length == 5 && gameOver(lastPlay()) == false) {
         counter = 2;
         return true;
     } else if (lastPlay().length >= 3) {
