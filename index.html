@@ -12,20 +12,21 @@
 
 <body>
     <section id="main-section">
-        <div id="gameOver">
+        <div id="main-menu">
             <div class="container">
-                <h2 id="gameOverCause">FIM DE JOGO</h2>
-                <div class="playAgainDiv">
-                    <span class="hidden-span-before">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></span>
-                    <a href="#" class="playAgainBtn">
-                        <span class="hidden-span-after">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></span>
-                    </a>
+                <h1>JOGO DA VELHA</h1>
+                <div class="main-menu-opt">
+                    <div class="menu-option-btn">
+                        <a href="#">1 jogador</a>
+                    </div>
+                    <div class="menu-option-btn">
+                        <a href="#">2 jogadores</a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <h1>JOGO DA VELHA</h1>
 
+        <div id="game-board" class="container">
             <div id="stage">
                 <div id="1" class="playArea"></div>
                 <div id="2" class="playArea"></div>
@@ -40,8 +41,25 @@
 
             <a href="#" id="endGameForced">Finalizar</a>
         </div>
+
+        <div id="gameOver">
+            <div class="container">
+                <h2 id="gameOverCause"></h2>
+                <div class="playAgainDiv">
+                    <span class="hidden-span-before">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></span>
+                    <a href="#" class="playAgainBtn">
+                        <span class="hidden-span-after">Reiniciar <i class="fa-solid fa-arrow-rotate-left"></i></span>
+                    </a>
+                </div>
+
+                <div class="menu-option-btn">
+                    <a href="#">Voltar ao Menu</a>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <script src="./assets/js/menu.js"></script>
     <script src="./assets/js/gameOverEvents.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>

@@ -8,7 +8,9 @@
     --secondary-clr: #fff;
 
     /* Spaces */
+    --biggest-plus-gap: calc(8rem + 5vw);
     --biggest-gap: calc(5rem + 5vw);
+    --large-plus-gap: calc(5rem + 2.5vw);
     --large-gap: calc(3rem + 2.5vw);
     --medium-gap: calc(1rem + 3vw);
     --small-gap: calc(1rem + 1vw);
@@ -33,15 +35,12 @@ body {
     font-family: 'Grape Nuts', cursive;
     width: 100%;
     min-height: 100vh;
+    overflow: hidden;
 }
 
-h1 {
-    font-size: clamp(2.4rem, 2rem + 2.2vw, 6rem);
-    text-align: center;
-}
-
-h2 {
+h1, h2 {
     font-size: clamp(4rem, 2rem + 4vw, 10rem);
+    text-align: center;
 }
 
 a {
@@ -74,6 +73,102 @@ a {
     color: var(--secondary-clr);
 }
 
+/* MENU PART */
+
+#main-menu {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 3;
+    background-image: linear-gradient(to bottom, rgba(97, 29, 29, 0.579), rgb(97, 29, 29), rgba(97, 29, 29, 0.942), rgba(97, 29, 29, 0.807), rgba(97, 29, 29, 0.402));   
+    min-height: 100vh;
+    width: 100%;
+    transition: 3s;
+}
+
+#main-menu .container {
+    padding-bottom: var(--biggest-plus-gap);
+}
+
+.main-menu-opt {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: var(--large-gap);
+    width: 100%;
+}
+
+.menu-option-btn {
+    width: 100%;
+    text-align: center;
+}
+
+.menu-option-btn:hover {
+    cursor: pointer;
+    background-color: #000;
+    transition: 0.3s;
+}
+
+/*-----------*/
+
+/* BOARD PART */
+
+#game-board {
+    opacity: 0;
+    transition: 2s;
+}
+
+#stage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--smallest-gap);
+    background-color: var(--secondary-clr);
+}
+
+.playArea {
+    background-color: var(--primary-clr);
+    width: calc(8rem + 5vw);
+    height: calc(8rem + 5vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playArea:hover {
+    cursor: pointer;
+}
+
+.playAreaDisabled {
+    background-color: var(--primary-clr);
+    width: calc(5rem + 5vw);
+    height: calc(5rem + 5vw);
+}
+
+#endGameForced {
+    position: relative;
+}
+
+#endGameForced::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    ;
+    width: 0;
+    height: 3px;
+    background-color: var(--secondary-clr);
+    transition: 0.3s;
+}
+
+#endGameForced:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/*-----------*/
+
 #gameOver {
     position: absolute;
     width: 100%;
@@ -89,8 +184,8 @@ a {
 }
 
 #gameOver .container {
-    gap: var(--gap);
-    padding-bottom: var(--biggest-gap);
+    gap: var(--large-gap);
+    padding-bottom: var(--large-gap);
 }
 
 .playAgainDiv {
@@ -132,52 +227,4 @@ a {
 
 .hidden-span-after {
     visibility: hidden;
-}
-
-/* BOARD PART */
-
-#stage {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--smallest-gap);
-    background-color: var(--secondary-clr);
-}
-
-.playArea {
-    background-color: var(--primary-clr);
-    width: calc(5rem + 5vw);
-    height: calc(5rem + 5vw);
-}
-
-.playArea:hover {
-    cursor: pointer;
-}
-
-.playAreaDisabled {
-    background-color: var(--primary-clr);
-    width: calc(5rem + 5vw);
-    height: calc(5rem + 5vw);
-}
-
-/*-----------*/
-
-#endGameForced {
-    position: relative;
-}
-
-#endGameForced::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    ;
-    width: 0;
-    height: 3px;
-    background-color: var(--secondary-clr);
-    transition: 0.3s;
-}
-
-#endGameForced:hover::after {
-    width: 100%;
-    left: 0;
 }
