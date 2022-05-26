@@ -89,7 +89,7 @@ a {
 }
 
 #main-menu .container {
-    padding-bottom: var(--biggest-plus-gap);
+    padding-bottom: var(--biggest-gap);
 }
 
 .main-menu-opt {
