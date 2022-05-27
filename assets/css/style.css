@@ -104,6 +104,7 @@ a {
 
 .menu-option-btn {
     width: 100%;
+    padding: 0 var(--gap);
     text-align: center;
     transition: 0.3s;
 }
@@ -236,6 +237,7 @@ a {
 }
 
 .back-to-menu-btn {
+    padding: 0 var(--gap);
     width: 100%;
     text-align: center;
     transition: 0.3s;
