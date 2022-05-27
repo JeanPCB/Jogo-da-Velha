@@ -86,7 +86,8 @@ a {
     background-image: linear-gradient(to bottom, rgba(97, 29, 29, 0.579), rgb(97, 29, 29), rgba(97, 29, 29, 0.942), rgba(97, 29, 29, 0.807), rgba(97, 29, 29, 0.402));   
     min-height: 100vh;
     width: 100%;
-    transition: 3s;
+    transform: scale(0);
+    transition: 2s;
 }
 
 #main-menu .container {
@@ -110,6 +111,10 @@ a {
     cursor: pointer;
     background-color: #000;
     transition: 0.3s;
+}
+
+.menu-option-btn:nth-child(1) {
+    color: #615b5b;
 }
 
 /*-----------*/
@@ -223,9 +228,20 @@ a {
     background-image: linear-gradient(to top right, #1fa653, #116732);
     position: relative;
     right: 100%;
-    transition: 0.8s;
+    transition: 0.5s;
 }
 
 .hidden-span-after {
     visibility: hidden;
+}
+
+.back-to-menu-btn {
+    width: 100%;
+    text-align: center;
+}
+
+.back-to-menu-btn:hover {
+    cursor: pointer;
+    background-color: #000;
+    transition: 0.3s;
 }

@@ -2,7 +2,9 @@ const playAgainDiv = document.querySelector('.playAgainDiv');
 const playAgainBtn = document.querySelector('.playAgainBtn');
 const body = document.querySelector('body');
 const gameOverCause = document.querySelector('#gameOverCause');
+const backToMenuBtn = document.querySelector('.back-to-menu-btn');
 
+// RESTART
 function gameOverScreen() {
     switch (counter) {
         case 0:
@@ -28,11 +30,17 @@ function gameOverScreen() {
     gameRestart();
     if (isGameOver() == true || isForcedEnd == true) {
         disableBoard();
+        backToMenu();
         divGameOver.style.transform = 'translateY(0)';
     }
 }
 
+function gameOverScreenHeight() {
+    divGameOver.style.height = `${body.offsetHeight}px`;
+}
+
 function gameRestart() {
+    playAgainDiv.addEventListener('click', gameReset);
     playAgainDiv.addEventListener('click', () => {
         playAgainBtn.style.right = '0';
         playAgainDiv.addEventListener('mouseover', () => {
@@ -41,12 +49,15 @@ function gameRestart() {
         playAgainDiv.addEventListener('mouseout', () => {
             playAgainDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
         });
-        clearPlays();
-        setTimeout(() => divGameOver.style.transform = 'translateY(-200%)', 1000);
-        setTimeout(clearBoard, 1000);
-        setTimeout(resetActionsDisplay, 1000);
-        setTimeout(resetRestartBtnAnim, 1500);
     });
+}
+
+function gameReset() {
+    clearPlays();
+    setTimeout(() => divGameOver.style.transform = 'translateY(-200%)', 500);
+    setTimeout(clearBoard, 500);
+    setTimeout(resetActionsDisplay, 500);
+    setTimeout(resetRestartBtnAnim, 1000);
 }
 
 function disableBoard() {
@@ -55,8 +66,10 @@ function disableBoard() {
     }
 }
 
-function resetRestartBtnAnim() {
-    playAgainBtn.style.right = '100%';
+function clearPlays() {
+    playerX = [];
+    playerO = [];
+    counter = 0;
 }
 
 function clearBoard() {
@@ -65,18 +78,23 @@ function clearBoard() {
     }
 }
 
-function gameOverScreenHeight() {
-    divGameOver.style.height = `${body.offsetHeight}px`;
-}
-
 function resetActionsDisplay() {
     for (let playArea of playAreas) {
         playArea.style = 'pointer-events: default';
     }
 }
 
-function clearPlays() {
-    playerX = [];
-    playerO = [];
-    counter = 0;
+function resetRestartBtnAnim() {
+    playAgainBtn.style.right = '100%';
+}
+
+// GO TO MENU
+function backToMenu() {
+    backToMenuBtn.addEventListener('click', gameReset);
+    backToMenuBtn.addEventListener('click', bringBackMenuSection);
+}
+
+function bringBackMenuSection() {
+    mainMenu.style.transform = 'translateY(0)';
+    gameBoard.style.opacity = '0';
 }
