@@ -88,10 +88,6 @@ function isGameOver() {
 // ONE PLAYER GAME
 function playerVsBot() {
     for (let playArea of playAreas) {
-        playArea.addEventListener('click', setPlays);
-        playArea.addEventListener('click', setActionsDisplay);
-        playArea.addEventListener('click', isGameOver);
-        playArea.addEventListener('click', gameOverScreen);
         playArea.addEventListener('click', botPlay);
     }
 
