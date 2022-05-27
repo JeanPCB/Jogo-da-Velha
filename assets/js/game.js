@@ -86,7 +86,7 @@ function isGameOver() {
 }
 
 // ONE PLAYER GAME
-function playerVsBot() {
+function startBot() {
     for (let playArea of playAreas) {
         playArea.addEventListener('click', botPlay);
     }
@@ -109,9 +109,8 @@ function playerVsBot() {
     function botPlay() {
         let stopBot = gameOverScreen();
         if (counter == 1 && playerX.length < 5) {
-            if (stopBot == false) {
-                setTimeout(() => playAreas[botValidPlay() - 1].click(), 100);
-            }
+            // Testando Short-circuit
+            stopBot || setTimeout(() => playAreas[botValidPlay() - 1].click(), 100);
         }
     }
 }
