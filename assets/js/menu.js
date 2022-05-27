@@ -5,6 +5,11 @@ const twoPlayersBtn = document.querySelector('#two-players-btn');
 
 window.addEventListener('load', () => mainMenu.style.transform = 'scale(1)'); 
 
+// ONE PLAYER START
+onePlayerBtn.addEventListener('click', startGame);
+onePlayerBtn.addEventListener('click', playerVsBot);
+
+// TWO PLAYERS START
 twoPlayersBtn.addEventListener('click', startGame);
 
 function startGame() {

@@ -85,5 +85,40 @@ function isGameOver() {
     }
 }
 
+// ONE PLAYER GAME
+function playerVsBot() {
+    for (let playArea of playAreas) {
+        playArea.addEventListener('click', setPlays);
+        playArea.addEventListener('click', setActionsDisplay);
+        playArea.addEventListener('click', isGameOver);
+        playArea.addEventListener('click', gameOverScreen);
+        playArea.addEventListener('click', botPlay);
+    }
+
+    function botValidPlay() {
+        let randomPlay = Math.ceil(Math.random() * 9);
+        randomPlay = randomPlay.toString();
+
+        if (playerX.includes(randomPlay) || playerO.includes(randomPlay)) {
+            while (playerX.includes(randomPlay) || playerO.includes(randomPlay)) {
+                randomPlay = Math.ceil(Math.random() * 9);
+                randomPlay = randomPlay.toString();
+            }
+            return randomPlay;
+        } else {
+            return randomPlay;
+        }
+    }
+
+    function botPlay() {
+        let stopBot = gameOverScreen();
+        if (counter == 1 && playerX.length < 5) {
+            if (stopBot == false) {
+                setTimeout(() => playAreas[botValidPlay() - 1].click(), 100);
+            }
+        }
+    }
+}
+
 isForcedEndGame();
 mainEventsController();

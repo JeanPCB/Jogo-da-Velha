@@ -6,32 +6,36 @@ const backToMenuBtn = document.querySelector('.back-to-menu-btn');
 
 // RESTART
 function gameOverScreen() {
-    switch (counter) {
-        case 0:
-            gameOverCause.innerText = '"O" ganhou"';
-            break;
-
-        case 1:
-            gameOverCause.innerText = '"X" ganhou';
-            break;
-
-        case 2:
-            gameOverCause.innerText = 'Deu velha...';
-            break;
-
-        case 3:
-            gameOverCause.innerText = 'Jogo Finalizado';
-            break;
-        
-        default:
-            gameOverCause.innerText = 'Ocorreu algum erro';
-    }
-    gameOverScreenHeight();
-    gameRestart();
     if (isGameOver() == true || isForcedEnd == true) {
+        gameOverScreenHeight();
+        switch (counter) {
+            case 0:
+                gameOverCause.innerText = '"O" ganhou"';
+                break;
+
+            case 1:
+                gameOverCause.innerText = '"X" ganhou';
+                break;
+
+            case 2:
+                gameOverCause.innerText = 'Deu velha...';
+                break;
+
+            case 3:
+                gameOverCause.innerText = 'Jogo Finalizado';
+                break;
+
+            default:
+                gameOverCause.innerText = 'Ocorreu algum erro';
+        }
+        gameRestart();
         disableBoard();
         backToMenu();
         divGameOver.style.transform = 'translateY(0)';
+
+        return true;
+    } else {
+        return false;
     }
 }
 
@@ -91,10 +95,5 @@ function resetRestartBtnAnim() {
 // GO TO MENU
 function backToMenu() {
     backToMenuBtn.addEventListener('click', gameReset);
-    backToMenuBtn.addEventListener('click', bringBackMenuSection);
-}
-
-function bringBackMenuSection() {
-    mainMenu.style.transform = 'translateY(0)';
-    gameBoard.style.opacity = '0';
+    backToMenuBtn.addEventListener('click', () => window.location.reload());
 }
