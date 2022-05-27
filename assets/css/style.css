@@ -105,12 +105,12 @@ a {
 .menu-option-btn {
     width: 100%;
     text-align: center;
+    transition: 0.3s;
 }
 
 .menu-option-btn:hover {
     cursor: pointer;
     background-color: #000;
-    transition: 0.3s;
 }
 
 .menu-option-btn:nth-child(1) {
@@ -238,10 +238,10 @@ a {
 .back-to-menu-btn {
     width: 100%;
     text-align: center;
+    transition: 0.3s;
 }
 
 .back-to-menu-btn:hover {
     cursor: pointer;
     background-color: #000;
-    transition: 0.3s;
 }
