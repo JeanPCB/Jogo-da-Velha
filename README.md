@@ -1,8 +1,13 @@
 # Jogo-da-Velha
 
-(🧱 EM CONSTRUÇÃO 🧱)
-
 *Jogo da velha criado sem pesquisa prévia 😝*
+
+### Modo de um jogador
+<div><img src='./assets/gifs/one-player-screen.gif' height='400'></div>
+
+### Modo de dois jogadores
+<div><img src='./assets/gifs/one-player-screen.gif' height='400'></div>
+<br>
 
 🔗 https://jeanpcb.github.io/Jogo-da-Velha/
 
