@@ -3,10 +3,10 @@
 *Jogo da velha criado sem pesquisa prévia 😝*
 
 ### Modo de um jogador
-<div><img src='./assets/gifs/one-player-screen.gif' height='400'></div>
+<div><img src='./assets/gifs/one-player-screen.gif' height='300'></div>
 
 ### Modo de dois jogadores
-<div><img src='./assets/gifs/two-players-screen.gif' height='400'></div>
+<div><img src='./assets/gifs/two-players-screen.gif' height='300'></div>
 <br>
 
 🔗 https://jeanpcb.github.io/Jogo-da-Velha/
