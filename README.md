@@ -5,7 +5,7 @@
 <table>
   <tr>
     <th>Modo de um jogador</th>
-    <th>Modo de um jogador</th>
+    <th>Modo de dois jogadores</th>
   </tr>
   <tr>
     <td>
