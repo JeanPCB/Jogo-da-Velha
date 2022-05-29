@@ -17,7 +17,7 @@
   </tr>
 </table>
 
-🔗 https://jeanpcb.github.io/Jogo-da-Velha/
+🔗 <a href='https://jeanpcb.github.io/Jogo-da-Velha/'>Clique aqui para conferir</a> 😉
 
 - **Linguagem foco:** <br>
 ✔ Javascript 
