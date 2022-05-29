@@ -2,12 +2,20 @@
 
 *Jogo da velha criado sem pesquisa prévia 😝*
 
-### Modo de um jogador
-<div><img src='./assets/gifs/one-player-screen.gif' height='300'></div>
-
-### Modo de dois jogadores
-<div><img src='./assets/gifs/two-players-screen.gif' height='300'></div>
-<br>
+<table>
+  <tr>
+    <th>Modo de um jogador</th>
+    <th>Modo de um jogador</th>
+  </tr>
+  <tr>
+    <td>
+      <img src='./assets/gifs/one-player-screen.gif' width='500' alt='gif do modo de um jogador'>
+    </td>
+    <td>
+      <img src='./assets/gifs/two-players-screen.gif' width='500' alt='gif do modo de dois jogadores'>
+    </td>
+  </tr>
+</table>
 
 🔗 https://jeanpcb.github.io/Jogo-da-Velha/
 
