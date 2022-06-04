@@ -3,7 +3,12 @@ const menuOptions = document.querySelectorAll('.menu-option-btn');
 const gameBoard = document.querySelector('#game-board');
 const onePlayerBtn = document.querySelector('#one-player-btn');
 
-window.addEventListener('load', () => mainMenu.style.transform = 'scale(1)'); 
+function setGameIntro() {
+    mainMenu.style.transform = 'scale(1)';
+    mainMenu.style.height = `${body.offsetHeight}px`;
+}
+
+window.addEventListener('load', setGameIntro); 
 
 // GAME START
 for (menuOpt of menuOptions) {
