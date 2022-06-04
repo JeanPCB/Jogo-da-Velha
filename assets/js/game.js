@@ -108,6 +108,8 @@ function startBot() {
 
     function botPlay() {
         let stopBot = gameOverScreen();
+        if (stopBot)
+            showHideBoard();
         if (counter == 1 && playerX.length < 5) {
             // Testando Short-circuit
             stopBot || setTimeout(() => playAreas[botValidPlay() - 1].click(), 100);

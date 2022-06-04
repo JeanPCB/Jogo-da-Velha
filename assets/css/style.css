@@ -19,6 +19,9 @@
 
     /* Times */
     ---main-trans-time: 0.3s;
+
+    /* Fonts */
+    --medium-font-size: clamp(2rem, 2rem + 2.5vw, 4rem);
 }
 
 * {
@@ -46,6 +49,12 @@ a {
     font-size: clamp(2.5rem, 3rem + 2.5vw, 6rem);
     text-decoration: none;
     color: inherit;
+}
+
+button {
+    background: none;
+    border: none;
+    font-family: inherit;
 }
 
 /* REUSABLE CLASSES */
@@ -242,4 +251,23 @@ a {
 .back-to-menu-btn:hover {
     cursor: pointer;
     background-color: #000;
+}
+
+.show-board-btn {
+    color: var(--secondary-clr);
+    font-size: var(--medium-font-size);
+    position: absolute;
+    bottom: 20px;
+    transition: var(---main-trans-time);
+    padding: 0 10px;
+}
+
+.show-board-btn img {
+    width: 3rem;
+    transition: var(---main-trans-time);
+}
+
+.show-board-btn img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
 }

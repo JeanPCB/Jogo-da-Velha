@@ -17,10 +17,10 @@
                 <h1>JOGO DA VELHA</h1>
                 <div class="main-menu-opt">
                     <div class="menu-option-btn">
-                        <a id="one-player-btn" href="#">1 jogador</a>
+                        <a id="one-player-btn" href="#" role="button">1 jogador</a>
                     </div>
                     <div class="menu-option-btn">
-                        <a id="two-players-btn" href="#">2 jogadores</a>
+                        <a id="two-players-btn" href="#" role="button">2 jogadores</a>
                     </div>
                 </div>
             </div>
@@ -28,15 +28,15 @@
 
         <div id="game-board" class="container">
             <div id="stage">
-                <div id="1" class="playArea"></div>
-                <div id="2" class="playArea"></div>
-                <div id="3" class="playArea"></div>
-                <div id="4" class="playArea"></div>
-                <div id="5" class="playArea"></div>
-                <div id="6" class="playArea"></div>
-                <div id="7" class="playArea"></div>
-                <div id="8" class="playArea"></div>
-                <div id="9" class="playArea"></div>
+                <div id="1" class="playArea" role="button"></div>
+                <div id="2" class="playArea" role="button"></div>
+                <div id="3" class="playArea" role="button"></div>
+                <div id="4" class="playArea" role="button"></div>
+                <div id="5" class="playArea" role="button"></div>
+                <div id="6" class="playArea" role="button"></div>
+                <div id="7" class="playArea" role="button"></div>
+                <div id="8" class="playArea" role="button"></div>
+                <div id="9" class="playArea" role="button"></div>
             </div>
 
             <a href="#" id="endGameForced">Finalizar</a>
@@ -53,8 +53,12 @@
                 </div>
 
                 <div class="back-to-menu-btn">
-                    <a href="#">Voltar ao Menu</a>
+                    <a href="#" role="button">Voltar ao Menu</a>
                 </div>
+
+                <button class="show-board-btn">
+                    <img src="./assets/images/up-arrow.png" alt="an arrow pointing up">
+                </button>
             </div>
         </div>
     </section>
